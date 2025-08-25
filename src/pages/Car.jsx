@@ -5,6 +5,7 @@ import SearchQuery from '../components/Car/SearchQuery'
 import DisplayCars from '../components/Car/DisplayCars'
 import PageNavigationButton from '../components/Car/PageNavigationButton'
 import Footer from '../components/Home/Footer'
+import FormAndMap from '../components/Contact/FormAndMap'
 
 const Car = () => {
   return (
@@ -14,6 +15,7 @@ const Car = () => {
         <SearchQuery/>
         <DisplayCars/>
         <PageNavigationButton/>
+        <FormAndMap/>
         <Footer/>
     </div>
   )

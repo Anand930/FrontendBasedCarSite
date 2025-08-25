@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { IoMdArrowDropdown } from "react-icons/io";
 import menuIcon from '../../assets/menu.png'
 import crossIcon from '../../assets/close.png'
 
 const Navbar = ({ NavbarClassName }) => {
   const [navbarFixed, setNavbarFixed] = useState(false);
+  const [aboutWindowOpen, setAboutWindowOpen] = useState(false)
   const [menuIconClicked, setMenuIconClicked] = useState(false)
   const location = useLocation().pathname === '/'
 
@@ -65,9 +67,9 @@ const Navbar = ({ NavbarClassName }) => {
 
             <li
               className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${navbarFixed ? "text-black" : location ? "text-white" : "text-black"
-                }`}
+                }`} onClick={() => setAboutWindowOpen(!aboutWindowOpen)}
             >
-              ABOUT
+              ABOUT <IoMdArrowDropdown className="inline-block" size={15} />
             </li>
             <Link to={'/contact'}>
             <li
@@ -79,8 +81,8 @@ const Navbar = ({ NavbarClassName }) => {
             </Link>
           </ul>
         </div>
-        <div className={menuIconClicked ? "flex" : "hidden"}>
-          <ul className="flex items-center justify-center flex-col absolute right-5 top-16 gap-4 border-2 border-gray-300 bg-custom1 py-2 px-3 rounded-xl text-white">
+        <div className={menuIconClicked ? "flex lg:hidden"  : "hidden"}>
+          <ul className="flex items-center justify-center flex-col absolute right-5 top-16 gap-4 border-2 border-gray-300 bg-custom1 py-2 px-3 rounded-xl text-white z-20 ">
             <Link to={'/'}><li className="hover:text-custom1 hover:bg-white hover:cursor-pointer w-full text-center px-2 py-1 rounded-xl flex items-center justify-center">HOME</li></Link>
             <Link to={"/car"}><li className="hover:text-custom1 hover:bg-white hover:cursor-pointer w-full text-center px-2 py-1 rounded-xl flex items-center justify-center">CARS</li></Link>
             <Link><li className="hover:text-custom1 hover:bg-white hover:cursor-pointer w-full text-center px-2 py-1 rounded-xl flex items-center justify-center">ABOUT</li></Link>
@@ -90,6 +92,16 @@ const Navbar = ({ NavbarClassName }) => {
         <div className="flex lg:hidden">
 
 
+        </div>
+        <div>
+          <ul className="flex flex-col absolute top-16 bg-black opacity-50 border-2 border-black py-3 px-5 gap-3  shadow-lg z-10 right-1/3 translate-x-1/2 text-white" style={{ display: aboutWindowOpen ? 'flex' : 'none' }}>
+            <Link to={"/aboutus"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">ABOUT US</li></Link>
+            <Link to={"/blog"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">BLOG</li></Link>
+            <Link to={"/team"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">TEAM</li></Link>
+            <Link to={"/testimonials"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">TESTIMONIALS</li></Link>
+            <Link to={"/faq"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">FAQ</li></Link>
+            <Link to={"/terms"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">TERMS</li></Link>
+          </ul>
         </div>
       </nav>
     </div>
