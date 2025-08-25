@@ -9,8 +9,8 @@ const DisplayBlog = () => {
     setSelected(button)
   }
   return (
-    <div className="flex items-center justify-center max-w-[80%] mx-auto gap-16 ">
-      <div className="left w-[35%] flex flex-col gap-6">
+    <div className="lg:flex lg:items-center lg:justify-center max-w-[80%] mx-auto gap-16 ">
+      <div className="left lg:w-[35%] flex flex-col gap-6">
         <>
           <Box
             para={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, libero?"}
@@ -33,7 +33,7 @@ const DisplayBlog = () => {
 
         <ReadMore />
       </div>
-      <div className="right w-[65%]">
+      <div className="right lg:w-[65%]">
 
         <DisplayBlogRight
           selected={selected}

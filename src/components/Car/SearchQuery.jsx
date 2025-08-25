@@ -23,7 +23,7 @@ const SearchQuery = () => {
 
     return (
         <div className='w-4/5 mx-auto flex flex-col justify-between items-center my-12'>
-            <div className='grid grid-cols-4 gap-10'>
+            <div className='grid lg:grid-cols-4 gap-10'>
                 {selectedOptions.map((selectedOption, index) => (
                     <FilterCart
                         key={index}

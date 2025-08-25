@@ -5,7 +5,7 @@ import TestimonialCart from './TestimonialCart.jsx'
 const Testimonials = () => {
   return (
     <div>
-        <div className='flex flex-col items-center justify-center w-3/5 mx-auto text mt-32 mb-16'>
+        <div className='flex flex-col items-center justify-center lg:w-3/5 w-4/5 mx-auto text mt-32 mb-16'>
             <CommonHeader firstpart={"READ OUR"} secondpart={"TESTIMONIALS"} text='black' descriptionText={"gray-500"} mainClassName={'text-center flex flex-col items-center justify-center'} firstpartClassName={"text-2xl"} />
         </div>
         <div className='w-4/5 mx-auto '>

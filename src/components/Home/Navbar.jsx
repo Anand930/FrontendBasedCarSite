@@ -3,10 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import menuIcon from '../../assets/menu.png'
 import crossIcon from '../../assets/close.png'
 
-const Navbar = ({NavbarClassName}) => {
+const Navbar = ({ NavbarClassName }) => {
   const [navbarFixed, setNavbarFixed] = useState(false);
   const [menuIconClicked, setMenuIconClicked] = useState(false)
-  const location = useLocation().pathname==='/'
+  const location = useLocation().pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,75 +25,71 @@ const Navbar = ({NavbarClassName}) => {
 
   return (
     <div
-      className={` bg-white z-50  w-full ${
-        navbarFixed
+      className={` bg-white z-50  w-full ${navbarFixed
           ? "fixed top-0 bg-white opacity-100 shadow-lg"
-          : location ?"absolute top-0 lg:opacity-55 lg:bg-navbar-bg":"bg-white opacity-100 shadow-lg"
-      }`}
+          : location ? "absolute top-0 lg:opacity-55 lg:bg-navbar-bg" : "bg-white opacity-100 shadow-lg"
+        }`}
     >
-      <nav className="flex items-center justify-between max-w-[80%] mx-auto h-20 ">
+      <nav className="flex items-center justify-between lg:max-w-[80%] w-5/6 mx-auto h-20 ">
         <div>
           <p
-            className={`md:text-[2rem] text-xl font-[1000]  ${
-              navbarFixed ? "text-custom-black " :location? "text-white":"text-black"
-            }`}
+            className={`md:text-[2rem] text-xl font-[1000]  ${navbarFixed ? "text-custom-black " : location ? "lg:text-white text-black text" : "text-black"
+              }`}
           >
             CAR DEALER <span className="text-custom1">WEBSITE</span>
           </p>
 
         </div>
-        <div className="md:w-8 sm:w-4 lg:hidden">
-          <img src={menuIconClicked?crossIcon:menuIcon} onClick={()=>setMenuIconClicked(!menuIconClicked)} alt="menu icon" />
+        <div className="md:w-8 sm:w-4 w-4 h-4 lg:hidden ">
+          <img className="w-full h-full object-contain cursor-pointer select-nones" src={menuIconClicked ? crossIcon : menuIcon} onClick={() => setMenuIconClicked(!menuIconClicked)} alt="menu icon" />
         </div>
         <div className="hidden lg:flex">
           <ul className="flex gap-10">
             <Link to={'/'}>
-            <li
-              className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${
-                navbarFixed ? "text-black" :location?"text-white":"text-black"
-              }`}
-            >
-              HOME
-            </li>
+              <li
+                className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${navbarFixed ? "text-black" : location ? "text-white" : "text-black"
+                  }`}
+              >
+                HOME
+              </li>
             </Link>
-            
+
             <Link to={'/car'}>
-            <li
-              className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${
-                navbarFixed ? "text-black" : location?"text-white":"text-black"
-              }`}
-            >
-              CARS
-            </li>
+              <li
+                className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${navbarFixed ? "text-black" : location ? "text-white" : "text-black"
+                  }`}
+              >
+                CARS
+              </li>
             </Link>
-            
+
             <li
-              className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${
-                navbarFixed ? "text-black" : location?"text-white":"text-black"
-              }`}
+              className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${navbarFixed ? "text-black" : location ? "text-white" : "text-black"
+                }`}
             >
               ABOUT
             </li>
+            <Link to={'/contact'}>
             <li
-              className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${
-                navbarFixed ? "text-black" : location?"text-white":"text-black"
-              }`}
+              className={`text-sm font-semibold hover:text-custom1 hover:cursor-pointer ${navbarFixed ? "text-black" : location ? "text-white" : "text-black"
+                }`}
             >
               CONTACT
             </li>
+            </Link>
           </ul>
         </div>
-        <div className="hidden">
-          <ul className="flex items-center justify-center flex-col">
-            <li>HOME</li>
-            <li>CARS</li>
-            <li>ABOUT</li>
-            <li>CONTACT</li>
+        <div className={menuIconClicked ? "flex" : "hidden"}>
+          <ul className="flex items-center justify-center flex-col absolute right-5 top-16 gap-4 border-2 border-gray-300 bg-custom1 py-2 px-3 rounded-xl text-white">
+            <Link to={'/'}><li className="hover:text-custom1 hover:bg-white hover:cursor-pointer w-full text-center px-2 py-1 rounded-xl flex items-center justify-center">HOME</li></Link>
+            <Link to={"/car"}><li className="hover:text-custom1 hover:bg-white hover:cursor-pointer w-full text-center px-2 py-1 rounded-xl flex items-center justify-center">CARS</li></Link>
+            <Link><li className="hover:text-custom1 hover:bg-white hover:cursor-pointer w-full text-center px-2 py-1 rounded-xl flex items-center justify-center">ABOUT</li></Link>
+            <Link><li className="hover:text-custom1 hover:bg-white hover:cursor-pointer w-full text-center px-2 py-1 rounded-xl flex items-center justify-center">CONTACT</li></Link>
           </ul>
         </div>
         <div className="flex lg:hidden">
 
-          
+
         </div>
       </nav>
     </div>
