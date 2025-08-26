@@ -94,7 +94,7 @@ const Navbar = ({ NavbarClassName }) => {
 
         </div>
         <div>
-          <ul className="flex flex-col absolute top-16 bg-black opacity-50 border-2 border-black py-3 px-5 gap-3  shadow-lg z-10 right-1/3 translate-x-1/2 text-white" style={{ display: aboutWindowOpen ? 'flex' : 'none' }}>
+          <ul className="flex flex-col absolute top-16 bg-black opacity-50 border-2 border-black py-3 px-5 gap-3 z-20 shadow-lg z-10 right-1/3 translate-x-1/2 text-white" style={{ display: aboutWindowOpen ? 'flex' : 'none' }}>
             <Link to={"/aboutus"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">ABOUT US</li></Link>
             <Link to={"/blog"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">BLOG</li></Link>
             <Link to={"/team"}><li className="text-sm font-semibold hover:text-custom1 hover:cursor-pointer">TEAM</li></Link>
