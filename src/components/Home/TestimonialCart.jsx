@@ -12,7 +12,7 @@ const TestimonialCart = ({ }) => {
                 />
                 <div className='flex flex-col items-start justify-center text-start w-4/5'>
                     <p className="text-xl font-bold text-start">John Doe</p>
-                    <p className='text-gray-500 text-sm'>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex earum reiciendis ipsa neque expedita fuga. Illo ratione fugit laudantium, vitae rem reprehenderit."</p>
+                    <p className='text-gray-500 text-sm italic'>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ex earum reiciendis ipsa neque expedita fuga. Illo ratione fugit laudantium, vitae rem reprehenderit."</p>
                 </div>
             </div>
         </div>
