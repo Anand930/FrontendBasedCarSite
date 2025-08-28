@@ -93,7 +93,7 @@ const Navbar = ({ NavbarClassName }) => {
         </div>
 
         <div>
-          <ul className="flex flex-col absolute top-16 lg:bg-black bg-custom1 border-white lg:opacity-50 border-2 lg:border-black py-3 px-5 gap-3  lg:shadow-lg z-20 lg:right-1/3 rounded-xl lg:rounded-none right-60 translate-x-1/2 thext-white" style={{ display: aboutWindowOpen && menuIconClicked ? 'flex' : 'none' }}>
+          <ul className="flex flex-col absolute top-16 lg:bg-black bg-custom1 border-white lg:opacity-50 border-2 lg:border-black py-3 px-5 gap-3  lg:shadow-lg z-20 lg:right-1/3 rounded-xl lg:rounded-none right-60 translate-x-1/2 thext-white" style={{ display: aboutWindowOpen  ? 'flex' : 'none' }}>
             <Link to={'/aboutus'}><li className="text-sm text-white font-semibold hover:text-custom1 hover:cursor-pointer">ABOUT US</li></Link>
             <Link to={"/blog"}><li className="text-sm text-white font-semibold hover:text-custom1 hover:cursor-pointer">BLOG</li></Link>
             <Link to={"/team"}><li className="text-sm text-white font-semibold hover:text-custom1 hover:cursor-pointer">TEAM</li></Link>
