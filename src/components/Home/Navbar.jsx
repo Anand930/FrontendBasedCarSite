@@ -40,7 +40,7 @@ const Navbar = ({ NavbarClassName }) => {
               className={`md:text-[2rem] text-xl font-[1000]  ${navbarFixed ? "text-custom-black " : location ? "lg:text-white text-black text" : "text-black"
                 }`}
             >
-              CAR DEALER <span className="text-custom1">WEBSITE</span>
+              HYPER <span className="text-custom1">CARS</span>
             </p>
           </Link>
         </div>
